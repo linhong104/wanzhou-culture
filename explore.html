@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#211c19">
+<meta name="description" content="Ask curated cultural questions about Wanzhou, its grilled fish and regional ingredients in three languages.">
+<title>Ask Wanzi · The Taste of Wanzhou</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;450;500;600&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="pages.css">
+<link rel="stylesheet" href="ai-chat.css">
+<link rel="stylesheet" href="mascot.css">
+<script src="content.js" defer></script>
+<script src="pages-content.js" defer></script>
+<script src="ai-content.js" defer></script>
+<script src="ai-chat.js" defer></script>
+<script src="pages-app.js" defer></script>
+<script src="mascot.js" defer></script>
+</head>
+<body data-page="explore">
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header" id="top">
+    <a class="brand" href="index.html" aria-label="The Taste of Wanzhou — home">
+      <span class="brand-seal" aria-hidden="true">江城<br>有味</span>
+      <span class="brand-wordmark">THE TASTE<br><span>OF WANZHOU</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation" id="main-nav">
+      <a href="index.html#about" data-nav="home" data-i18n="navAbout">The story</a>
+      <a href="craft.html" data-nav="craft" data-i18n="navCraft">The craft</a>
+      <a href="flavors.html" data-nav="flavors" data-i18n="navFlavors">The flavors</a>
+      <a href="wanzhou.html" data-nav="wanzhou" data-i18n="navCity">Wanzhou</a>
+      <a href="explore.html" data-nav="explore" data-i18n="navExplore">Start a conversation</a>
+    </nav>
+    <div class="header-actions">
+      <div class="language-switch" aria-label="Website language">
+        <button type="button" data-lang="en" class="active" aria-pressed="true">EN</button><span>/</span>
+        <button type="button" data-lang="zh" aria-pressed="false">中</button><span>/</span>
+        <button type="button" data-lang="ja" aria-pressed="false">日</button>
+      </div>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Open menu"><span></span><span></span></button>
+    </div>
+  </header>
+<main id="main-content" class="page-main" tabindex="-1"><nav class="breadcrumbs container" aria-label="Breadcrumb"><a href="index.html" data-i18n="backHome">Back to the story</a><span class="breadcrumb-divider" aria-hidden="true">/</span><span id="breadcrumb-current" aria-current="page" data-i18n="navExplore">Start a conversation</span></nav><div class="page-intro container"><p class="eyebrow">WANZI / 万滋文化向导</p><h1 id="page-title" class="display-title" data-i18n="guidePageTitle">Talk with Wanzi</h1><p class="page-description" id="page-description" data-i18n="guidePageIntro">Meet Wanzi, your little fish guide to Wanzhou and its grilled fish. Explore with AI when available, or browse answers from our cultural notes.</p></div><div class="guide-layout container">
+  <aside class="guide-sidebar">
+    <div class="guide-identity"><img src="assets/wanzi-fish.png" alt="" width="90" height="65"><span>WANZI / 万滋</span></div>
+    <h2 data-i18n="guideTopics">Start with a question</h2>
+    <div class="guide-topic-list" id="guide-topics"></div>
+    <div class="guide-links">
+      <a href="craft.html" data-i18n="guideExploreCraft">Discover the craft</a>
+      <a href="flavors.html" data-i18n="guideExploreFlavors">Explore the flavors</a>
+      <a href="credits.html" data-i18n="footerSources">Sources &amp; image credits</a>
+      <p class="guide-source-note" data-i18n="guideSource">Library answers use information stored on this site. When AI is enabled, your questions are sent to Groq to generate a reply.</p>
+    </div>
+  </aside>
+  <section class="assistant-card guide-conversation" aria-label="Wanzi culture guide">
+    <div class="assistant-header">
+      <span class="assistant-avatar" aria-hidden="true"><img src="assets/wanzi-fish.png" alt="" width="57" height="49"></span>
+      <div><strong data-i18n="aiGreetingName">Wanzi · Your fish guide</strong><span data-i18n="assistantTagline">Your Chinese food culture guide</span></div>
+      <span class="ai-mode-label" id="ai-mode-label" role="status" data-i18n="aiChecking">Checking AI availability…</span>
+      <button id="chat-clear" type="button" class="text-button" data-i18n="aiNewConversation">New conversation</button>
+    </div>
+    <div class="ai-mode-controls" role="group" aria-label="Conversation mode">
+      <button id="chat-mode-ai" type="button" aria-pressed="false" disabled data-i18n="aiCloudMode">AI conversation</button>
+      <button id="chat-mode-library" type="button" aria-pressed="true" data-i18n="aiLibraryMode">Cultural notes</button>
+    </div>
+    <p class="ai-mode-help" id="ai-mode-help" data-i18n="aiModeHelp">AI offers generated replies when available. Cultural notes provide prepared answers about Wanzhou and grilled fish.</p>
+    <p class="ai-availability-banner" id="ai-availability-banner" hidden></p>
+    <div class="chat-transcript" id="chat-transcript" role="log" aria-live="polite" aria-relevant="additions"></div>
+    <div class="suggested-questions" id="suggested-questions"></div>
+    <form class="chat-form" id="chat-form">
+      <label class="visually-hidden" for="chat-input" data-i18n="questionLabel">A little curiosity goes a long way</label>
+      <input id="chat-input" type="text" maxlength="500" autocomplete="off">
+      <button type="submit" aria-label="Send" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 14-7-5 14-3-5-6-2Zm6 2 8-9"/></svg></button>
+    </form>
+    <div class="chat-actions"><button class="chat-cancel" id="chat-cancel" type="button" hidden data-i18n="aiCancel">Stop</button></div>
+    <div class="assistant-footer">
+      <div class="chat-language" aria-label="Response language"><button type="button" data-lang="en">English</button><button type="button" data-lang="zh">中文</button><button type="button" data-lang="ja">日本語</button></div>
+      <p id="ai-privacy" data-i18n="aiPrivacy">Only AI conversations are sent to Groq. Cultural notes work locally in your browser.</p>
+      <span role="status" id="guide-status" class="visually-hidden"></span>
+    </div>
+  </section>
+</div>
+</main>
+<footer class="site-footer"><div class="container"><div class="footer-top"><a class="brand footer-brand" href="index.html"><span class="brand-seal" aria-hidden="true">江城<br>有味</span><span class="brand-wordmark">THE TASTE<br><span>OF WANZHOU</span></span></a><p data-i18n="footerTagline">From Wanzhou to the world.</p><a class="footer-back" href="#top" data-i18n="footerBack">Back to the beginning</a></div><div class="footer-bottom"><span>© 2026 THE TASTE OF WANZHOU</span><span>江城有味 / A CULTURE OF SHARING</span><a href="credits.html" data-i18n="footerSources">Sources &amp; image credits</a></div></div></footer>
+<noscript><p class="container">Please enable JavaScript for language switching and the culture guide. 请启用 JavaScript 以使用语言切换和文化问答。</p></noscript>
+</body>
+</html>

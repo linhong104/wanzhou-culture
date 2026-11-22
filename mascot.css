@@ -1,0 +1,167 @@
+.wanzi-companion {
+  --wanzi-ink: #211c19;
+  --wanzi-red: #a83b2d;
+  --wanzi-cream: #f4efe5;
+  --wanzi-gold: #b58a53;
+  --wanzi-size: 140px;
+  position: fixed;
+  z-index: 70;
+  width: var(--wanzi-size);
+  color: var(--wanzi-ink);
+  font-family: var(--sans, Inter, 'Microsoft YaHei', Arial, sans-serif);
+  line-height: 1.6;
+}
+.wanzi-companion [hidden] { display: none !important; }
+.wanzi-companion button,
+.wanzi-companion a { -webkit-tap-highlight-color: transparent; }
+.wanzi-companion button:focus-visible,
+.wanzi-companion a:focus-visible { outline: 2px solid var(--wanzi-red); outline-offset: 4px; }
+.wanzi-companion-shell { position: relative; }
+.wanzi-fish-button {
+  display: flex;
+  width: 100%;
+  padding: 0 0 3px;
+  align-items: center;
+  flex-direction: column;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+.wanzi-fish-illustration {
+  display: block;
+  width: 100%;
+  animation: wanzi-drift 5s ease-in-out infinite;
+  transform-origin: 50% 55%;
+}
+.wanzi-fish-image {
+  display: block;
+  width: var(--wanzi-size);
+  height: var(--wanzi-size);
+  object-fit: contain;
+  filter: drop-shadow(0 8px 8px #211c1914);
+  pointer-events: none;
+}
+.wanzi-fish-name {
+  display: block;
+  min-width: 68px;
+  margin-top: -8px;
+  padding: 3px 13px;
+  border: 1px solid #b58a536b;
+  border-radius: 30px;
+  background: #fcfaf5f5;
+  color: var(--wanzi-red);
+  font-size: 13px;
+  letter-spacing: .03em;
+  box-shadow: 0 3px 12px #211c1908;
+}
+.wanzi-minimize {
+  position: absolute;
+  top: 3px;
+  right: -1px;
+  display: grid;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  place-items: center;
+  border: 1px solid #b58a5359;
+  border-radius: 50%;
+  background: #fcfaf5f2;
+  color: #756d62;
+  font-size: 18px;
+  line-height: 1;
+  transition: background .2s, color .2s;
+}
+.wanzi-minimize:hover,
+.wanzi-card-close:hover { background: #e9e0d2; color: var(--wanzi-red); }
+.wanzi-capsule {
+  display: flex;
+  width: 112px;
+  height: 44px;
+  padding: 3px 14px 3px 4px;
+  align-items: center;
+  gap: 7px;
+  border: 1px solid #b58a5373;
+  border-radius: 32px;
+  background: #fcfaf5fa;
+  color: var(--wanzi-red);
+  font: inherit;
+  font-size: 14px;
+  box-shadow: 0 4px 18px #211c1910;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+.wanzi-capsule img { width: 35px; height: 35px; object-fit: contain; pointer-events: none; }
+.wanzi-is-minimized { width: 112px; }
+.wanzi-companion-card {
+  position: fixed;
+  width: min(330px, calc(100vw - 24px));
+  max-height: calc(100svh - 24px);
+  padding: 26px 25px 16px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border: 1px solid #dcd1c0;
+  border-radius: 3px;
+  background: #fcfaf5;
+  box-shadow: 0 12px 45px #211c1926;
+  animation: wanzi-card-enter .18s ease-out both;
+  scrollbar-width: thin;
+}
+.wanzi-card-close {
+  position: absolute;
+  top: 9px;
+  right: 9px;
+  display: grid;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  place-items: center;
+  border: 0;
+  background: transparent;
+  color: #756d62;
+  font-size: 23px;
+  line-height: 1;
+}
+.wanzi-card-eyebrow { margin: 0 22px 13px 0; color: var(--wanzi-red); font-size: 12px; line-height: 1.6; letter-spacing: .07em; }
+.wanzi-card-title { margin: 0 0 12px; font-family: var(--serif, Georgia, 'Noto Serif SC', serif); font-size: 29px; font-weight: 400; line-height: 1.3; letter-spacing: -.015em; }
+html[lang=zh] .wanzi-card-title,
+html[lang=ja] .wanzi-card-title { font-family: var(--chinese, 'Noto Serif SC', serif); font-size: 23px; letter-spacing: .015em; }
+.wanzi-card-intro { margin: 0 0 21px; color: #756d62; font-size: 14px; line-height: 1.85; }
+.wanzi-talk-link { display: flex; width: 100%; min-height: 44px; padding: 10px 15px; align-items: center; justify-content: center; border: 1px solid var(--wanzi-red); background: var(--wanzi-red); color: #fffaf2; font-size: 14px; text-decoration: none; transition: background .2s; }
+.wanzi-talk-link:hover { background: #853025; }
+.wanzi-topics-label { margin: 22px 0 7px; color: #8a7963; font-size: 12px; letter-spacing: .02em; }
+.wanzi-topic-links { border-top: 1px solid #e3dace; }
+.wanzi-topic-link { display: block; padding: 11px 0; border-bottom: 1px solid #e3dace; color: var(--wanzi-ink); font-size: 14px; line-height: 1.6; text-decoration: none; transition: color .2s; }
+.wanzi-topic-link:hover { color: var(--wanzi-red); }
+.wanzi-card-footer { margin-top: 15px; }
+.wanzi-companion-status { display: block; color: var(--wanzi-red); font-size: 12px; }
+.wanzi-drag-hint { display: block; margin-top: 3px; color: #8b8072; font-size: 12px; }
+.wanzi-is-dragging .wanzi-fish-illustration { animation: none; transform: rotate(-4deg); }
+.wanzi-is-dragging .wanzi-fish-button,
+.wanzi-is-dragging .wanzi-capsule { cursor: grabbing; }
+.wanzi-companion[data-state=thinking] .wanzi-fish-illustration { animation: wanzi-think 1.8s ease-in-out infinite; }
+.wanzi-companion[data-state=speaking] .wanzi-fish-illustration { animation: wanzi-speak 1.3s ease-in-out infinite; }
+.wanzi-companion[data-state=error] .wanzi-fish-illustration { animation: none; }
+.wanzi-companion[data-state=thinking] .wanzi-fish-name { border-color: var(--wanzi-gold); }
+.wanzi-companion.wanzi-is-dragging .wanzi-fish-illustration { animation: none; transform: rotate(-4deg); }
+@keyframes wanzi-drift { 0%, 100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-5px) rotate(1deg); } }
+@keyframes wanzi-think { 0%, 100% { transform: rotate(-4deg); } 50% { transform: translateY(-3px) rotate(3deg); } }
+@keyframes wanzi-speak { 0%, 100% { transform: translateY(0); } 45% { transform: translateY(-5px) rotate(-2deg); } 70% { transform: translateY(-2px) rotate(1deg); } }
+@keyframes wanzi-card-enter { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 600px) {
+  .wanzi-companion { --wanzi-size: 100px; }
+  .wanzi-fish-name { min-width: 62px; margin-top: -4px; padding: 2px 11px; }
+  .wanzi-minimize { top: -4px; right: -2px; width: 28px; height: 28px; }
+  .wanzi-companion-card { width: min(310px, calc(100vw - 24px)); padding: 25px 22px 16px; }
+  .wanzi-card-title { font-size: 27px; }
+}
+@media (hover: none) {
+  .wanzi-minimize { width: 34px; height: 34px; top: -7px; right: -6px; }
+  .wanzi-card-close { width: 36px; height: 36px; top: 5px; right: 5px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .wanzi-companion *, .wanzi-companion *::before, .wanzi-companion *::after { animation: none !important; transition: none !important; }
+}

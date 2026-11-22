@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#211c19">
+<meta name="description" content="Discover the flavors, craft and riverside culture of Wanzhou, Chongqing, China.">
+<title>江城有味 · The Taste of Wanzhou</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;450;500;600&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="pages.css">
+<link rel="stylesheet" href="ai-chat.css">
+<link rel="stylesheet" href="mascot.css">
+<script src="content.js" defer></script>
+<script src="pages-content.js" defer></script>
+<script src="ai-content.js" defer></script>
+<script src="ai-chat.js" defer></script>
+<script src="pages-app.js" defer></script>
+<script src="mascot.js" defer></script>
+<link rel="stylesheet" href="hero-video.css">
+<script src="hero-video.js" defer></script>
+</head>
+<body data-page="home">
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header" id="top">
+    <a class="brand" href="index.html" aria-label="The Taste of Wanzhou — home">
+      <span class="brand-seal" aria-hidden="true">江城<br>有味</span>
+      <span class="brand-wordmark">THE TASTE<br><span>OF WANZHOU</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation" id="main-nav">
+      <a href="index.html#about" data-nav="home" data-i18n="navAbout">The story</a>
+      <a href="craft.html" data-nav="craft" data-i18n="navCraft">The craft</a>
+      <a href="flavors.html" data-nav="flavors" data-i18n="navFlavors">The flavors</a>
+      <a href="wanzhou.html" data-nav="wanzhou" data-i18n="navCity">Wanzhou</a>
+      <a href="explore.html" data-nav="explore" data-i18n="navExplore">Start a conversation</a>
+    </nav>
+    <div class="header-actions">
+      <div class="language-switch" aria-label="Website language">
+        <button type="button" data-lang="en" class="active" aria-pressed="true">EN</button><span>/</span>
+        <button type="button" data-lang="zh" aria-pressed="false">中</button><span>/</span>
+        <button type="button" data-lang="ja" aria-pressed="false">日</button>
+      </div>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Open menu"><span></span><span></span></button>
+    </div>
+  </header>
+<main id="main-content" class="home-main" tabindex="-1">    <section class="hero" id="home" aria-labelledby="hero-title">
+      <img class="hero-image hero-poster" src="assets/hero-web.jpg" alt="" aria-hidden="true" fetchpriority="high">
+      <video class="hero-image hero-video" id="home-film" autoplay muted loop playsinline preload="metadata" poster="assets/hero-web.jpg" aria-hidden="true" tabindex="-1">
+        <source src="assets/wanzhou-film.mp4?v=04b46070" type="video/mp4">
+      </video>
+      <div class="hero-shade"></div>
+      <div class="hero-content container">
+        <div class="eyebrow hero-eyebrow"><span class="small-line"></span><span data-i18n="heroEyebrow">A culinary story from Chongqing, China</span></div>
+        <h1 id="hero-title"><span data-i18n="heroTitle1">THE TASTE</span><br><em data-i18n="heroTitle2">OF WANZHOU</em></h1>
+        <p class="hero-chinese" lang="zh">江城有味，四海同席。</p>
+        <p class="hero-description" data-i18n="heroBody">Discover the dish that brings the spirit of a Yangtze riverside city to the table.</p>
+        <div class="hero-buttons">
+          <a class="button button-red" href="#about" data-i18n="heroExplore">Explore the culture</a>
+          <a class="button button-outline" href="wanzhou.html" data-i18n="heroCity">Discover Wanzhou</a>
+        </div>
+      </div>
+      <span class="hero-vertical" lang="zh" aria-hidden="true">一江烟火 · 万州烤鱼</span>
+      <button class="hero-video-control" id="hero-video-toggle" type="button" aria-controls="home-film" aria-label="Pause background video" hidden>
+        <svg viewBox="0 0 20 20" aria-hidden="true"><path class="video-icon-pause" d="M6 5h3v10H6zm5 0h3v10h-3z"/><path class="video-icon-play" d="m7 4 9 6-9 6z"/></svg><span>Pause video</span>
+      </button>
+      <div class="hero-bottom container"><a href="#about" class="scroll-cue"><span class="scroll-line"></span><span data-i18n="heroScroll">Scroll to discover</span></a><span class="hero-location"><span class="pin-icon" aria-hidden="true"></span> WANZHOU · CHONGQING · CHINA</span></div>
+    </section>
+
+    <div class="brand-strip"><span data-i18n="stripLeft">Rooted in Wanzhou, Chongqing</span><svg viewBox="0 0 110 28" aria-hidden="true"><path d="M2 14C20-1 32-1 51 14S82 29 108 14M2 22C20 7 32 7 51 22S82 37 108 22" fill="none" stroke="currentColor" stroke-width="1"/></svg><span data-i18n="stripRight">Made for sharing</span></div>
+
+    <section class="about section-pad container" id="about" aria-labelledby="about-title">
+      <div class="about-visual reveal">
+        <div class="photo-frame"><img src="assets/hero-web.jpg" alt="A closer look at Wanzhou-style whole grilled fish" loading="lazy"></div>
+        <div class="image-stamp" aria-hidden="true"><span>万</span><small>WANZHOU<br>CHONGQING</small></div>
+        <p class="image-caption"><span class="caption-line"></span><span data-i18n="aboutPhotoCaption">A meeting of fire, fragrance, and a table full of company.</span></p>
+      </div>
+      <div class="about-copy reveal">
+        <p class="eyebrow" data-i18n="aboutEyebrow">A taste of place</p>
+        <h2 class="display-title" id="about-title" data-i18n="aboutTitle">More than a dish. A way of coming together.</h2>
+        <p class="chinese-heading" lang="zh">不止一条鱼，更是一座城的烟火。</p>
+        <p data-i18n="aboutBody">A whole fish, grilled until fragrant, then brought together with a richly seasoned sauce and vegetables. Wanzhou grilled fish combines the aroma of the grill with the warmth of a gently simmering shared meal.</p>
+        <p class="secondary-copy" data-i18n="aboutSecondary">It carries the character of Wanzhou, a district of Chongqing on the Yangtze River: generous flavors, lively tables, and the pleasure of eating together. Every cook brings a different touch.</p>
+        <div class="about-tags"><span data-i18n="aboutTag1">Whole fish</span><span data-i18n="aboutTag2">Grilled, then simmered</span><span data-i18n="aboutTag3">A shared table</span></div>
+      </div>
+    </section>
+
+<section class="home-journeys section-pad"><div class="container"><div class="section-heading"><div><p class="eyebrow" data-i18n="continueExploring">Continue exploring</p><h2 class="display-title" data-i18n="homeTitle">There is more to discover.</h2></div><p class="section-intro" data-i18n="homeIntro">Follow the fire, find a flavor, or meet the city behind the dish. Each path opens a different part of the story.</p></div><div class="journey-grid"><a href="craft.html" class="journey-card journey-craft"><div class="journey-image"><img src="assets/hero-web.jpg" alt="Grilled fish with aromatic herbs" loading="lazy"></div><div class="journey-copy"><span class="journey-tag">CRAFT / 技艺</span><h3 data-i18n="homeCraftTitle">From fire to table</h3><p data-i18n="homeCraftBody">Follow four stages of preparation and see how a grilled fish becomes a meal to share.</p><span class="journey-enter" data-i18n="enterLabel">Explore</span></div></a><a href="flavors.html" class="journey-card journey-flavors"><div class="journey-image ingredient-photo"></div><div class="journey-copy"><span class="journey-tag">FLAVORS / 风味</span><h3 data-i18n="homeFlavorTitle">Find your flavor</h3><p data-i18n="homeFlavorBody">Explore four distinctive profiles, compare their ingredients, and find a place to begin.</p><span class="journey-enter" data-i18n="enterLabel">Explore</span></div></a><a href="wanzhou.html" class="journey-card journey-city"><div class="journey-image"><img src="assets/wanzhou.jpg" alt="Wanzhou from Taibaiyan, May 2013, Wu Xiansheng / CC BY 3.0" loading="lazy"></div><div class="journey-copy"><span class="journey-tag">WANZHOU / 江城</span><h3 data-i18n="homeCityTitle">The city behind the dish</h3><p data-i18n="homeCityBody">Meet Wanzhou through its river, everyday streets, and the pleasure of gathering around a table.</p><span class="journey-enter" data-i18n="enterLabel">Explore</span></div></a><a href="explore.html" class="journey-card journey-guide"><div class="journey-image journey-guide-image"><img class="journey-mascot" src="assets/wanzi-fish.png" alt="Wanzi, your fish guide" loading="lazy"><span>WANZI / 万滋</span></div><div class="journey-copy"><span class="journey-tag">DISCOVER / 对话</span><h3 data-i18n="homeGuideTitle">A little curiosity, a new story</h3><p data-i18n="homeGuideBody">Ask Wanzi about the dish, its craft, or the city, with a collection of carefully written answers.</p><span class="journey-enter" data-i18n="enterLabel">Explore</span></div></a></div></div></section><section class="closing-banner"><span class="closing-small">江城有味 · THE TASTE OF WANZHOU</span><p>From Wanzhou,<br><em>with flavor.</em></p><span class="closing-chinese" lang="zh">从长江之畔出发，让世界品味中国。</span></section></main>
+<footer class="site-footer"><div class="container"><div class="footer-top"><a class="brand footer-brand" href="index.html"><span class="brand-seal" aria-hidden="true">江城<br>有味</span><span class="brand-wordmark">THE TASTE<br><span>OF WANZHOU</span></span></a><p data-i18n="footerTagline">From Wanzhou to the world.</p><a class="footer-back" href="#top" data-i18n="footerBack">Back to the beginning</a></div><div class="footer-bottom"><span>© 2026 THE TASTE OF WANZHOU</span><span>江城有味 / A CULTURE OF SHARING</span><a href="credits.html" data-i18n="footerSources">Sources &amp; image credits</a></div></div></footer>
+<noscript><p class="container">Please enable JavaScript for language switching and the culture guide. 请启用 JavaScript 以使用语言切换和文化问答。</p></noscript>
+</body>
+</html>

@@ -1,0 +1,497 @@
+/* Shared navigation and the editorial pages. The opening home story keeps its original layout. */
+html{scroll-padding-top:120px}
+.site-header{position:sticky;top:0;box-shadow:0 1px 0 rgba(33,28,25,.04)}
+.main-nav a,.language-switch button{font-size:14px}
+.main-nav a[aria-current=page]{color:var(--red)}
+.main-nav a[aria-current=page]:after{width:100%}
+.page-main{min-height:65vh;padding-bottom:0}
+.page-main .eyebrow,.home-journeys .eyebrow{font-size:12px;letter-spacing:.15em}
+.page-main p,.page-main li{overflow-wrap:break-word}
+.page-main .display-title{line-height:1.1}
+.breadcrumbs{display:flex;align-items:center;flex-wrap:wrap;gap:12px;padding-top:32px;padding-bottom:14px;font-size:12px;line-height:1.6;color:var(--muted)}
+.breadcrumbs a{padding:3px 0;text-decoration:underline;text-decoration-color:transparent;text-underline-offset:4px;transition:color .2s,text-decoration-color .2s}
+.breadcrumbs a:hover{color:var(--red);text-decoration-color:var(--red)}
+.breadcrumbs [aria-current=page]{color:var(--ink)}
+.breadcrumb-divider{color:#b7ab99}
+.page-intro{padding-top:57px;padding-bottom:64px}
+.page-intro .eyebrow{margin-bottom:22px}
+.page-intro .display-title{max-width:980px;font-size:clamp(52px,5.1vw,80px);margin-bottom:28px}
+.page-description{max-width:710px;margin:0;color:var(--muted);font-size:17px;line-height:1.85}
+.page-section{padding-bottom:100px}
+.page-main .button{font-size:14px;letter-spacing:.015em;min-height:50px}
+.page-main .text-button{background:none;border:0;border-bottom:1px solid var(--line);padding:5px 0;color:var(--muted);font-size:14px;line-height:1.5;text-align:left;transition:color .2s,border-color .2s}
+.page-main .text-button:hover{color:var(--red);border-color:var(--red)}
+.text-link{display:inline-block;font-size:14px;line-height:1.6;color:var(--red);border-bottom:1px solid #bca789;padding:4px 0;text-decoration:none;transition:border-color .2s}
+.text-link:hover{border-color:var(--red)}
+.editorial-note{font-size:12px!important;line-height:1.8!important;color:var(--muted);margin:25px 0 0}
+.next-destination{background:#eae2d5;border-top:1px solid #d9cebd;padding:66px 0}
+.next-destination>.container{display:flex;align-items:center;justify-content:space-between;gap:60px}
+.next-destination>.container>div{max-width:790px}
+.next-destination .eyebrow{margin-bottom:15px}
+.next-destination .display-title{font-size:clamp(35px,3.5vw,52px);margin-bottom:17px}
+.next-destination p:not(.eyebrow){font-size:16px;line-height:1.8;color:#716451;max-width:650px;margin:0}
+.next-destination .button-outline{flex:none;border-color:#a69782;color:var(--ink)}
+.next-destination .button-outline:hover{color:var(--cream)}
+.empty-state{padding:80px 30px;text-align:center;border:1px solid var(--line);font-size:16px;color:var(--muted)}
+.empty-state .button{margin-top:20px}
+
+/* A concise set of doors into the website, after the original introduction. */
+.home-journeys{background:#ece5d9;border-top:1px solid var(--line)}
+.home-journeys .section-heading{align-items:flex-end;margin-bottom:44px}
+.home-journeys .section-heading>div{max-width:700px}
+.home-journeys .section-intro{font-size:16px;max-width:360px;line-height:1.85}
+.journey-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.journey-card{display:flex;flex-direction:column;min-width:0;background:#f7f3eb;border:1px solid #ddd3c3;transition:transform .25s,border-color .25s}
+.journey-card:hover{transform:translateY(-5px);border-color:#bca78c}
+.journey-image{height:218px;overflow:hidden;background-color:var(--ink)}
+.journey-image img{width:100%;height:100%;transition:transform .45s}
+.journey-card:hover .journey-image img{transform:scale(1.035)}
+.journey-craft .journey-image img{object-position:74% center}
+.journey-flavors .journey-image{background-position:0 0}
+.journey-city .journey-image img{object-position:60% center;filter:saturate(.75)}
+.journey-guide-image{background:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#cbb18d;gap:20px}
+.journey-guide-image svg{width:105px;height:68px;fill:none;stroke:currentColor;stroke-width:1.1}
+.journey-guide-image>span{font-size:12px;letter-spacing:.12em}
+.journey-copy{display:flex;flex:1;flex-direction:column;padding:27px 24px 25px}
+.journey-tag{font-size:12px;line-height:1.5;color:var(--red);letter-spacing:.09em}
+.journey-copy h3{font-family:var(--serif);font-size:31px;font-weight:500;line-height:1.17;letter-spacing:-.02em;margin:15px 0 16px}
+.journey-copy p{font-size:16px;line-height:1.75;color:var(--muted);margin:0 0 28px}
+.journey-enter{display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid var(--line);padding-top:17px;font-size:14px;color:var(--ink);margin-top:auto}
+
+/* Craft chapters and an addressable detail page for every stage. */
+.chapter-directory{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:44px 32px}
+.chapter-card{display:flex;flex-direction:column;min-width:0;border:1px solid var(--line);background:#f8f4ec;transition:border-color .25s,transform .25s}
+.chapter-card:hover{border-color:#bca78c;transform:translateY(-4px)}
+.chapter-card-photo{height:310px;position:relative;overflow:hidden}
+.fish-photo{background-image:url('assets/hero-web.jpg');background-position:center;background-size:cover;background-color:var(--ink)}
+.chapter-card-photo.fish-photo{background-position:68% center}
+.chapter-card-photo>span,.chapter-card-photo>small{position:absolute;left:23px;bottom:22px;color:var(--cream);font-size:12px;letter-spacing:.11em;text-shadow:0 1px 12px #000}
+.chapter-card-copy{padding:30px 32px 29px;display:flex;flex:1;flex-direction:column}
+.chapter-card-copy>.eyebrow{margin-bottom:13px}
+.chapter-card-copy>span:first-child,.chapter-card-copy>small{font-size:12px;color:var(--red);letter-spacing:.09em}
+.chapter-card-copy h2,.chapter-card-copy h3{font-family:var(--serif);font-size:36px;font-weight:400;line-height:1.15;letter-spacing:-.025em;margin:12px 0 18px}
+.chapter-card-copy p{font-size:16px;line-height:1.85;color:var(--muted);margin:0 0 24px}
+.chapter-card-copy .chapter-link,.chapter-card-copy .journey-enter{font-size:14px;margin-top:auto}
+.chapter-card-copy>a,.chapter-card-copy>span:last-child{font-size:14px;color:var(--red)}
+.chapter-read{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:auto;border-top:1px solid var(--line);padding-top:17px}
+.chapter-detail{display:grid;grid-template-columns:245px minmax(0,1fr);gap:66px;align-items:start}
+.chapter-sidebar{position:sticky;top:130px;border-top:1px solid var(--line);padding-top:22px}
+.chapter-sidebar>h2,.chapter-sidebar>h3{font-family:var(--sans);font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:500;color:var(--muted);margin:0 0 18px}
+.chapter-sidebar>p:first-child{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 18px}
+.chapter-sidebar a{display:flex;flex-direction:column;align-items:flex-start;gap:4px;font-size:14px;line-height:1.6;padding:14px 13px;border-bottom:1px solid var(--line);transition:color .2s,background .2s,border-color .2s}
+.chapter-sidebar a:first-of-type{border-top:1px solid var(--line)}
+.chapter-sidebar a>span:first-child{color:var(--ink);flex:none}
+.chapter-sidebar a>small{font-size:12px;line-height:1.6;color:var(--muted)}
+.chapter-sidebar a:hover{color:var(--red);background:#eee6d9}
+.chapter-sidebar a.active,.chapter-sidebar a[aria-current=page],.chapter-sidebar a[aria-current=step]{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.chapter-sidebar a.active>span:first-child,.chapter-sidebar a[aria-current]>span:first-child{color:var(--cream)}
+.chapter-sidebar a.active>small,.chapter-sidebar a[aria-current]>small{color:#cfbca2}
+.chapter-sidebar .chapter-overview{margin-top:20px;padding:10px 0;border:0;color:var(--red)}
+.chapter-article{min-width:0}
+.chapter-detail-photo{height:420px;position:relative;margin-bottom:40px}
+.chapter-detail-photo.fish-photo{background-position:68% center}
+.chapter-detail-photo>span{position:absolute;bottom:25px;left:26px;color:var(--cream);font-family:var(--chinese);font-size:22px;letter-spacing:.14em;text-shadow:0 1px 12px #000}
+.chapter-article>.eyebrow{margin-bottom:16px}
+.chapter-article h2{font-family:var(--serif);font-size:clamp(38px,3.5vw,54px);font-weight:400;line-height:1.17;letter-spacing:-.025em;margin:12px 0 24px}
+.chapter-article h3{font-family:var(--serif);font-size:30px;font-weight:500;line-height:1.3;margin:0 0 15px}
+.chapter-article p{font-size:16px;line-height:1.9;color:var(--muted);max-width:720px}
+.chapter-article .article-lead{font-size:20px;line-height:1.8;color:#4c4237;margin:0 0 28px}
+.article-note{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:29px 0;margin:34px 0}
+.article-note>.eyebrow{margin-bottom:12px}
+.article-note p{margin:0;color:var(--muted)}
+.article-note h3{color:var(--ink)}
+.chapter-pager{display:flex;align-items:stretch;justify-content:space-between;gap:24px;margin-top:42px;border-top:1px solid var(--line);padding-top:23px}
+.chapter-pager a{display:flex;flex-direction:column;gap:8px;font-size:14px;line-height:1.6;max-width:46%;color:var(--red)}
+.chapter-pager a:last-child{text-align:right;margin-left:auto;align-items:flex-end}
+.chapter-pager small,.chapter-pager span{font-size:12px;color:var(--muted)}
+.chapter-pager strong{font-size:16px;font-weight:500}
+
+/* Flavor browsing remains legible at a glance, with real links to each story. */
+.flavor-toolbar{display:flex;align-items:center;justify-content:space-between;gap:25px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;margin-bottom:36px}
+.filter-links{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.filter-links a,.filter-links button{display:inline-flex;align-items:center;justify-content:center;background:transparent;border:1px solid transparent;font-size:14px;line-height:1.5;padding:9px 17px;color:var(--muted);transition:background .2s,color .2s,border-color .2s}
+.filter-links a:hover,.filter-links button:hover{border-color:#cbbda9;color:var(--red)}
+.filter-links .active,.filter-links [aria-current=page],.filter-links [aria-pressed=true]{color:var(--cream);background:var(--ink);border-color:var(--ink)}
+.flavor-toolbar>p{font-size:12px;color:var(--muted);line-height:1.6;margin:0;text-align:right;flex:none}
+.flavor-directory{gap:28px}
+.flavor-directory .flavor-card{display:flex;min-width:0}
+.flavor-directory .flavor-image{height:290px}
+.flavor-directory .flavor-card h3{font-size:30px;margin-top:22px;line-height:1.2}
+.flavor-directory .flavor-card p{font-size:16px;line-height:1.75;margin:13px 0 24px;min-height:56px}
+.flavor-directory .flavor-action{font-size:14px;text-transform:none;letter-spacing:0}
+.flavor-directory .flavor-card-bottom{padding-top:17px}
+.flavor-directory .heat-meter{gap:5px}
+.flavor-directory .heat-meter span{width:6px;height:14px}
+.flavor-detail-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:72px;align-items:center;padding-top:44px;padding-bottom:80px}
+.flavor-portrait{height:560px;position:relative}
+.flavor-portrait>span{position:absolute;top:30px;left:28px;writing-mode:vertical-rl;letter-spacing:.2em;font-family:var(--chinese);font-size:28px;color:var(--cream);text-shadow:0 1px 8px #0009}
+.flavor-detail-heading{min-width:0;padding:12px 0}
+.flavor-detail-heading .eyebrow{font-size:15px;margin-bottom:18px}
+.flavor-detail-heading h1{font-family:var(--serif);font-size:clamp(48px,4.7vw,72px);font-weight:400;line-height:1.08;letter-spacing:-.03em;margin:0 0 23px}
+.flavor-detail-heading>p:not(.eyebrow):not(.flavor-heat-label){font-size:19px;line-height:1.7;color:var(--muted);margin:0 0 28px}
+.flavor-heat-label{display:flex;align-items:center;gap:18px;font-size:12px;color:var(--muted);margin:25px 0 29px}
+.flavor-heat-label .heat-meter{display:inline-flex;gap:5px}
+.flavor-heat-label .heat-meter span{width:6px;height:15px}
+.flavor-facts{border-top:1px solid var(--line);margin:28px 0 0;padding:22px 0 0}
+.flavor-facts dt{font-size:12px;letter-spacing:.07em;color:var(--red);margin-bottom:8px}
+.flavor-facts dd{font-size:16px;line-height:1.85;margin:0 0 21px}
+.flavor-facts dd:last-child{margin-bottom:0}
+.flavor-editorial{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:90px;padding-top:64px;padding-bottom:75px;border-top:1px solid var(--line)}
+.flavor-editorial h2{font-family:var(--serif);font-size:40px;font-weight:400;line-height:1.2;letter-spacing:-.025em;margin:0 0 24px}
+.flavor-editorial p{font-size:16px;line-height:1.9;color:var(--muted);margin:0 0 24px}
+.flavor-editorial .eyebrow{font-size:12px;margin-bottom:17px}
+.flavor-editorial .button-red{margin-top:10px}
+.pairing-note{background:#ece5d9;padding:30px 32px;align-self:start;border-top:2px solid #b58a53}
+.pairing-note h2,.pairing-note h3{font-family:var(--serif);font-size:29px;font-weight:500;line-height:1.3;margin:0 0 17px}
+.pairing-note p{margin:0;font-size:16px}
+.pairing-note .text-link{margin-top:22px}
+.related-flavors{padding:65px 0 100px;border-top:1px solid var(--line)}
+.related-flavors h2{font-family:var(--serif);font-size:42px;font-weight:400;line-height:1.2;letter-spacing:-.025em;margin:0 0 34px}
+.related-flavors .section-heading{gap:30px;margin-bottom:34px}
+.related-flavors .section-heading h2{margin-bottom:0}
+.related-flavors .section-heading .text-link{flex:none}
+.related-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px}
+.related-grid .flavor-image{height:225px}
+.related-grid .flavor-card h3{font-size:30px;margin-top:21px}
+.related-grid .flavor-card p{font-size:16px;line-height:1.75;min-height:0;margin:12px 0 20px}
+.related-grid .flavor-action{font-size:14px;text-transform:none;letter-spacing:0}
+.related-grid .flavor-card-bottom{border-color:#d4c8b6}
+
+/* The guide has a persistent topic list and a focused, readable conversation. */
+.guide-layout{display:grid;grid-template-columns:260px minmax(0,1fr);gap:50px;align-items:start;padding-bottom:100px}
+.guide-sidebar{position:sticky;top:130px}
+.guide-identity{display:flex;align-items:center;gap:17px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0;margin-bottom:30px;color:var(--red)}
+.guide-identity svg{width:65px;height:43px;fill:none;stroke:currentColor;stroke-width:1.2}
+.guide-identity>span{font-size:12px;letter-spacing:.09em}
+.guide-sidebar h2{font-size:14px;font-weight:500;line-height:1.6;margin:0 0 14px}
+.guide-topic-list{display:flex;flex-direction:column;gap:0}
+.guide-topic-list button{position:relative;display:block;width:100%;border:0;border-bottom:1px solid var(--line);background:none;padding:15px 25px 15px 0;text-align:left;font-size:14px;line-height:1.65;color:var(--muted);transition:color .2s}
+.guide-topic-list button:hover,.guide-topic-list button.active,.guide-topic-list button.selected{color:var(--red)}
+.guide-topic-list button.selected:after{color:var(--red)}
+.guide-links{display:flex;flex-direction:column;gap:13px;margin-top:28px}
+.guide-links a{font-size:14px;line-height:1.7;color:var(--red);text-decoration:underline;text-decoration-color:#c7b396;text-underline-offset:4px}
+.guide-links a:hover{text-decoration-color:var(--red)}
+.guide-links .guide-source-note{font-size:12px;line-height:1.85;color:var(--muted);margin:15px 0 0}
+.guide-links a:last-child{font-size:12px;line-height:1.8;color:var(--muted);margin-top:10px;text-decoration-color:var(--line)}
+.guide-conversation.assistant-card{padding:30px 32px;box-shadow:0 12px 40px #35251406}
+.guide-conversation .assistant-header{padding-bottom:23px}
+.guide-conversation .assistant-header strong{font-size:28px}
+.guide-conversation .assistant-header>div>span{font-size:12px;line-height:1.6}
+.guide-conversation .assistant-header .text-button{font-size:12px;margin-left:10px;flex:none}
+.guide-conversation .chat-transcript{height:410px;min-height:410px;max-height:410px;padding:28px 0 16px;scrollbar-color:#bca88b transparent;scrollbar-gutter:stable}
+.guide-conversation .chat-message{font-size:16px;line-height:1.85;padding:16px 19px;max-width:93%;margin-bottom:17px}
+.guide-conversation .chat-message.user{max-width:85%}
+.guide-conversation .suggested-questions{gap:8px;margin:14px 0 20px}
+.guide-conversation .suggested-questions button{font-size:14px;padding:9px 12px;line-height:1.5}
+.guide-conversation .chat-form{padding:8px 9px 8px 16px;gap:10px}
+.guide-conversation .chat-form input{font-size:16px;line-height:1.6;height:38px}
+.guide-conversation .chat-form button{width:40px;height:40px}
+.guide-conversation .chat-form svg{width:22px;height:22px}
+.guide-conversation .assistant-footer{padding-top:18px}
+.guide-conversation .chat-language{gap:20px}
+.guide-conversation .chat-language button{font-size:14px;padding:2px 0}
+.guide-conversation .assistant-footer p{font-size:12px;line-height:1.7;color:var(--muted);margin-top:15px}
+
+/* City essays and credits use calm editorial rhythm. */
+.page-main .city-image{height:480px}
+.page-main .city-image-caption{font-size:12px;letter-spacing:.06em;line-height:1.7;right:45px}
+.page-main .city-copy>p:not(.eyebrow):not(.chinese-heading){font-size:16px;line-height:1.9}
+.page-main .city-details h3{font-size:28px}
+.page-main .city-details p{font-size:16px;line-height:1.85}
+.page-main .map-top-label,.page-main .map-caption{font-size:12px;line-height:1.7}
+.city-editorial .section-heading{max-width:880px;margin-bottom:44px}
+.city-editorial .section-heading .eyebrow{font-size:12px}
+.city-editorial .section-heading .display-title{font-size:38px;line-height:1.45;letter-spacing:-.015em}
+.city-story-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:36px}
+.city-story-grid article{border-top:1px solid #bcaa8f;padding-top:28px}
+.city-story-grid h3,.city-story-grid h2{font-family:var(--serif);font-size:31px;font-weight:500;line-height:1.2;letter-spacing:-.02em;margin:0 0 20px}
+.city-story-grid p{font-size:16px;line-height:1.9;color:var(--muted);margin:0}
+.city-story-grid .eyebrow{font-size:12px;margin-bottom:16px}
+.credits-page{padding-bottom:105px}
+.credits-page>div{max-width:830px;padding-top:8px}
+.credits-page p,.credits-page li{font-size:16px;line-height:1.9;color:var(--muted)}
+.credits-page p{margin:0 0 24px}
+.credits-page h2,.credits-page h3{font-family:var(--serif);font-size:32px;font-weight:500;line-height:1.3;border-top:1px solid var(--line);padding-top:29px;margin:38px 0 20px}
+.credits-page ul{padding-left:22px;margin:0 0 30px}
+.credits-page li{margin-bottom:14px;padding-left:5px}
+.credits-page a{color:var(--red);text-decoration:underline;text-decoration-color:#bfa98d;text-underline-offset:4px;overflow-wrap:anywhere}
+.credits-page a:hover{text-decoration-color:var(--red)}
+.site-footer .footer-bottom a{font-size:12px;color:#baa98f;text-decoration:underline;text-underline-offset:4px}
+
+/* Appropriate heading rhythm for Chinese and Japanese, without altering the home opening. */
+html[lang=zh] .page-intro .display-title,html[lang=ja] .page-intro .display-title{font-size:clamp(39px,3.8vw,58px);line-height:1.4;letter-spacing:.015em;max-width:1000px}
+html[lang=zh] .journey-copy h3,html[lang=ja] .journey-copy h3{font-family:var(--chinese);font-size:25px;line-height:1.55;letter-spacing:0}
+html[lang=zh] .chapter-card-copy h2,html[lang=ja] .chapter-card-copy h2,html[lang=zh] .chapter-card-copy h3,html[lang=ja] .chapter-card-copy h3{font-family:var(--chinese);font-size:29px;line-height:1.5;letter-spacing:0}
+html[lang=zh] .chapter-article h2,html[lang=ja] .chapter-article h2{font-family:var(--chinese);font-size:36px;line-height:1.5;letter-spacing:0}
+html[lang=zh] .chapter-article h3,html[lang=ja] .chapter-article h3{font-family:var(--chinese);font-size:24px;line-height:1.55}
+html[lang=zh] .flavor-detail-heading h1,html[lang=ja] .flavor-detail-heading h1{font-family:var(--chinese);font-size:44px;line-height:1.4;letter-spacing:0}
+html[lang=zh] .flavor-editorial h2,html[lang=ja] .flavor-editorial h2,html[lang=zh] .related-flavors h2,html[lang=ja] .related-flavors h2{font-family:var(--chinese);font-size:30px;line-height:1.55;letter-spacing:0}
+html[lang=zh] .pairing-note h2,html[lang=ja] .pairing-note h2,html[lang=zh] .pairing-note h3,html[lang=ja] .pairing-note h3{font-family:var(--chinese);font-size:23px;line-height:1.6}
+html[lang=zh] .city-story-grid h3,html[lang=ja] .city-story-grid h3,html[lang=zh] .city-story-grid h2,html[lang=ja] .city-story-grid h2{font-family:var(--chinese);font-size:25px;line-height:1.55;letter-spacing:0}
+html[lang=zh] .city-editorial .section-heading .display-title,html[lang=ja] .city-editorial .section-heading .display-title{font-size:29px;line-height:1.75;letter-spacing:0}
+html[lang=zh] .next-destination .display-title,html[lang=ja] .next-destination .display-title{font-size:34px;line-height:1.5}
+
+@media(min-width:1600px){
+  .journey-image{height:240px}
+  .flavor-directory .flavor-image{height:320px}
+  .chapter-card-photo{height:345px}
+  .chapter-detail-photo{height:460px}
+  .flavor-portrait{height:610px}
+}
+@media(max-width:1200px){
+  .main-nav{gap:19px}
+  .main-nav a{font-size:13px}
+  .journey-grid{gap:20px}
+  .journey-image{height:190px}
+  .journey-copy{padding:23px 20px}
+  .journey-copy h3{font-size:28px}
+  .chapter-detail{grid-template-columns:220px minmax(0,1fr);gap:44px}
+  .chapter-card-photo{height:280px}
+  .flavor-directory{gap:23px}
+  .flavor-directory .flavor-image{height:250px}
+  .flavor-detail-top{gap:50px}
+  .flavor-portrait{height:535px}
+  .flavor-editorial{gap:60px}
+  .guide-layout{grid-template-columns:240px minmax(0,1fr);gap:35px}
+  .guide-conversation.assistant-card{padding:27px}
+  .city-story-grid{gap:28px}
+}
+@media(max-width:980px){
+  html{scroll-padding-top:105px}
+  .main-nav{gap:14px}
+  .main-nav a{font-size:12px}
+  .page-intro{padding-top:43px;padding-bottom:52px}
+  .page-intro .display-title{font-size:61px;max-width:780px}
+  .page-description{font-size:16px;max-width:670px}
+  .page-section{padding-bottom:80px}
+  .home-journeys .section-heading{align-items:start;gap:35px}
+  .home-journeys .section-heading>div{max-width:550px}
+  .home-journeys .section-intro{max-width:265px}
+  .journey-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 24px}
+  .journey-image{height:240px}
+  .journey-copy{padding:28px}
+  .journey-copy h3{font-size:33px}
+  .chapter-directory{gap:30px 24px}
+  .chapter-card-photo{height:250px}
+  .chapter-card-copy{padding:25px}
+  .chapter-card-copy h2,.chapter-card-copy h3{font-size:31px}
+  .chapter-detail{grid-template-columns:190px minmax(0,1fr);gap:32px}
+  .chapter-sidebar{top:112px}
+  .chapter-sidebar a{padding:13px 10px;gap:10px}
+  .chapter-detail-photo{height:340px;margin-bottom:31px}
+  .chapter-article .article-lead{font-size:18px}
+  .chapter-article h2{font-size:40px}
+  .flavor-directory{grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 26px}
+  .flavor-directory .flavor-image{height:300px}
+  .flavor-directory .flavor-card h3{font-size:33px}
+  .flavor-directory .flavor-card p{min-height:0}
+  .flavor-detail-top{gap:35px;align-items:start;padding-top:32px;padding-bottom:60px}
+  .flavor-portrait{height:515px}
+  .flavor-detail-heading h1{font-size:51px}
+  .flavor-detail-heading>p:not(.eyebrow):not(.flavor-heat-label){font-size:18px}
+  .flavor-editorial{gap:40px;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);padding-top:50px;padding-bottom:60px}
+  .flavor-editorial h2{font-size:34px}
+  .pairing-note{padding:25px}
+  .related-grid{gap:24px}
+  .related-grid .flavor-image{height:190px}
+  .related-grid .flavor-card h3{font-size:27px}
+  .related-flavors{padding-bottom:80px}
+  .guide-layout{grid-template-columns:210px minmax(0,1fr);gap:25px;padding-bottom:80px}
+  .guide-sidebar{top:110px}
+  .guide-identity{gap:12px}
+  .guide-identity svg{width:55px}
+  .guide-identity>span{font-size:12px;letter-spacing:.03em}
+  .guide-conversation.assistant-card{padding:23px}
+  .guide-conversation .assistant-header{flex-wrap:wrap}
+  .guide-conversation .assistant-header .text-button{margin-left:54px}
+  .guide-conversation .chat-transcript{height:420px;min-height:420px;max-height:420px}
+  .page-main .city-image{height:380px}
+  .page-main .city-image-caption{left:32px;right:32px;letter-spacing:.025em}
+  .city-story-grid{gap:25px}
+  .city-story-grid h3,.city-story-grid h2{font-size:28px}
+  .next-destination>.container{gap:35px}
+  .next-destination .display-title{font-size:42px}
+  html[lang=zh] .chapter-article h2,html[lang=ja] .chapter-article h2{font-size:31px}
+  html[lang=zh] .flavor-detail-heading h1,html[lang=ja] .flavor-detail-heading h1{font-size:36px}
+}
+@media(max-width:760px){
+  html{scroll-padding-top:102px}
+  .main-nav a,html[lang=zh] .main-nav a,html[lang=ja] .main-nav a{font-size:16px}
+  .main-nav.open{gap:5px;max-height:calc(100svh - 78px);overflow-y:auto}
+  .main-nav a{width:100%;padding:10px 0}
+  .language-switch button{font-size:14px}
+  .breadcrumbs{padding-top:22px;padding-bottom:9px;gap:8px;font-size:12px}
+  .page-intro{padding-top:35px;padding-bottom:43px}
+  .page-intro .eyebrow{margin-bottom:20px}
+  .page-intro .display-title{font-size:50px;line-height:1.12;margin-bottom:23px}
+  .page-description{font-size:16px;line-height:1.85}
+  .page-section{padding-bottom:65px}
+  .page-main .button{padding:14px 22px;min-height:49px}
+  .home-journeys .section-heading{display:block;margin-bottom:34px}
+  .home-journeys .section-intro{max-width:550px;font-size:16px;margin-top:22px}
+  .journey-grid{gap:24px 20px}
+  .journey-image{height:210px}
+  .journey-copy{padding:24px 22px}
+  .journey-copy h3{font-size:31px;margin-top:13px}
+  .journey-copy p{font-size:16px;margin-bottom:24px}
+  .chapter-directory{gap:28px 20px}
+  .chapter-card-photo{height:210px}
+  .chapter-card-copy{padding:23px 22px}
+  .chapter-card-copy h2,.chapter-card-copy h3{font-size:29px}
+  .chapter-card-copy p{font-size:16px;line-height:1.8}
+  .chapter-detail{grid-template-columns:1fr;gap:32px}
+  .chapter-sidebar{position:static;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-bottom:1px solid var(--line);border-top:0;padding-top:0}
+  .chapter-sidebar>h2,.chapter-sidebar>h3,.chapter-sidebar>p:first-child{grid-column:1/-1;margin-bottom:16px}
+  .chapter-sidebar>nav{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .chapter-sidebar a{border-top:1px solid var(--line);border-bottom:0;padding:14px 12px;gap:10px}
+  .chapter-sidebar nav a{gap:4px}
+  .chapter-sidebar nav a:nth-of-type(odd){border-right:1px solid var(--line)}
+  .chapter-sidebar .chapter-overview{grid-column:1/-1;margin-top:12px;padding:13px 0}
+  .chapter-detail-photo{height:380px;margin-bottom:30px}
+  .chapter-article h2{font-size:39px;line-height:1.2;margin-bottom:22px}
+  .chapter-article .article-lead{font-size:18px;line-height:1.85}
+  .chapter-article p{font-size:16px;line-height:1.9}
+  .article-note{margin:29px 0;padding:26px 0}
+  .chapter-pager{margin-top:31px;gap:20px}
+  .flavor-toolbar{align-items:flex-start;flex-direction:column;gap:14px;padding:16px 0;margin-bottom:29px}
+  .filter-links{gap:6px}
+  .filter-links a,.filter-links button{padding:9px 13px}
+  .flavor-toolbar>p{text-align:left}
+  .flavor-directory{gap:37px 22px}
+  .flavor-directory .flavor-image{height:275px}
+  .flavor-directory .flavor-card h3{font-size:30px}
+  .flavor-directory .flavor-card p{font-size:16px}
+  .flavor-directory .flavor-action{font-size:14px}
+  .flavor-detail-top{grid-template-columns:1fr;gap:32px;padding-top:26px;padding-bottom:48px}
+  .flavor-portrait{height:440px}
+  .flavor-portrait>span{font-size:27px;left:26px;top:26px}
+  .flavor-detail-heading{padding:0}
+  .flavor-detail-heading h1{font-size:53px;max-width:600px}
+  .flavor-detail-heading>p:not(.eyebrow):not(.flavor-heat-label){font-size:19px;line-height:1.75;margin-bottom:24px}
+  .flavor-facts{margin-top:26px}
+  .flavor-editorial{grid-template-columns:1fr;gap:24px;padding-top:43px;padding-bottom:52px}
+  .flavor-editorial h2{font-size:36px}
+  .flavor-editorial p{line-height:1.9}
+  .pairing-note{padding:27px 28px;margin-top:6px}
+  .related-flavors{padding:46px 0 65px}
+  .related-flavors h2{font-size:36px;margin-bottom:28px}
+  .related-flavors .section-heading .text-link{margin-top:18px}
+  .related-grid{gap:20px}
+  .related-grid .flavor-image{height:175px}
+  .related-grid .flavor-card h3{font-size:25px}
+  .related-grid .flavor-card p{font-size:16px}
+  .related-grid .flavor-card-bottom{gap:12px;flex-wrap:wrap}
+  .related-grid .flavor-action{font-size:14px}
+  .guide-layout{grid-template-columns:1fr;gap:32px;padding-bottom:65px}
+  .guide-sidebar{position:static}
+  .guide-identity{padding:18px 0;margin-bottom:23px}
+  .guide-identity svg{width:61px}
+  .guide-identity>span{letter-spacing:.09em}
+  .guide-sidebar h2{font-size:14px;margin-bottom:11px}
+  .guide-topic-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 24px}
+  .guide-topic-list button{font-size:14px;padding-top:12px;padding-bottom:12px}
+  .guide-topic-list button:after{top:12px}
+  .guide-links{flex-direction:row;align-items:flex-start;flex-wrap:wrap;gap:12px 25px;margin-top:21px}
+  .guide-links a:last-child{width:100%;margin-top:4px;max-width:650px}
+  .guide-conversation.assistant-card{padding:25px}
+  .guide-conversation .assistant-header{flex-wrap:nowrap}
+  .guide-conversation .assistant-header .text-button{margin-left:10px}
+  .guide-conversation .chat-transcript{height:380px;min-height:380px;max-height:380px;padding-top:24px}
+  .guide-conversation .chat-message{max-width:94%;padding:15px 17px}
+  .guide-conversation .suggested-questions button{font-size:14px}
+  .page-main .city-image{height:340px}
+  .page-main .city-image-caption{left:24px;right:24px;bottom:20px;font-size:12px}
+  .page-main .city-content{gap:38px}
+  .page-main .city-details{gap:22px}
+  .page-main .city-details h3{font-size:27px}
+  .page-main .city-details p{font-size:16px}
+  .city-editorial .section-heading{margin-bottom:32px}
+  .city-editorial .section-heading .display-title{font-size:31px;line-height:1.5}
+  .city-story-grid{grid-template-columns:1fr;gap:32px}
+  .city-story-grid article{padding-top:23px}
+  .city-story-grid h3,.city-story-grid h2{font-size:31px;margin-bottom:15px}
+  .credits-page{padding-bottom:65px}
+  .credits-page h2,.credits-page h3{font-size:29px;padding-top:25px;margin-top:31px}
+  .credits-page ul{padding-left:19px}
+  .next-destination{padding:45px 0}
+  .next-destination>.container{flex-direction:column;align-items:flex-start;gap:25px}
+  .next-destination .display-title{font-size:39px;line-height:1.15}
+  .next-destination .eyebrow{margin-bottom:15px}
+  .next-destination .button{margin-top:0}
+  .empty-state{padding:55px 23px}
+  html[lang=zh] .page-intro .display-title,html[lang=ja] .page-intro .display-title{font-size:35px;line-height:1.5}
+  html[lang=zh] .journey-copy h3,html[lang=ja] .journey-copy h3{font-size:23px;line-height:1.55}
+  html[lang=zh] .chapter-card-copy h2,html[lang=ja] .chapter-card-copy h2,html[lang=zh] .chapter-card-copy h3,html[lang=ja] .chapter-card-copy h3{font-size:25px}
+  html[lang=zh] .chapter-article h2,html[lang=ja] .chapter-article h2{font-size:29px}
+  html[lang=zh] .flavor-detail-heading h1,html[lang=ja] .flavor-detail-heading h1{font-size:37px}
+  html[lang=zh] .flavor-editorial h2,html[lang=ja] .flavor-editorial h2,html[lang=zh] .related-flavors h2,html[lang=ja] .related-flavors h2{font-size:27px}
+  html[lang=zh] .city-editorial .section-heading .display-title,html[lang=ja] .city-editorial .section-heading .display-title{font-size:25px}
+  html[lang=zh] .next-destination .display-title,html[lang=ja] .next-destination .display-title{font-size:29px;line-height:1.5}
+}
+@media(max-width:540px){
+  .journey-grid{grid-template-columns:1fr;gap:26px}
+  .journey-image{height:245px}
+  .journey-copy{padding:27px 25px}
+  .journey-copy h3{font-size:33px;line-height:1.2;max-width:340px}
+  .journey-copy p{max-width:390px}
+  .chapter-directory{grid-template-columns:1fr;gap:27px}
+  .chapter-card-photo{height:255px}
+  .chapter-card-copy{padding:27px 25px}
+  .chapter-card-copy h2,.chapter-card-copy h3{font-size:33px}
+  .chapter-detail-photo{height:300px}
+  .chapter-article h2{font-size:35px}
+  .chapter-sidebar a{font-size:14px;gap:8px;padding:13px 10px}
+  .chapter-pager strong{font-size:14px}
+  .flavor-directory{grid-template-columns:1fr;gap:37px}
+  .flavor-directory .flavor-image{height:340px}
+  .flavor-directory .flavor-card h3{font-size:34px}
+  .flavor-directory .flavor-card p{margin-bottom:22px}
+  .flavor-portrait{height:365px}
+  .flavor-detail-heading h1{font-size:48px}
+  .flavor-detail-heading>p:not(.eyebrow):not(.flavor-heat-label){font-size:18px}
+  .related-grid{grid-template-columns:1fr;gap:31px}
+  .related-grid .flavor-image{height:280px}
+  .related-grid .flavor-card h3{font-size:31px}
+  .related-grid .flavor-card-bottom{flex-wrap:nowrap}
+  .guide-topic-list{grid-template-columns:1fr}
+  .guide-conversation.assistant-card{padding:22px 18px}
+  .guide-conversation .assistant-header{gap:10px}
+  .guide-conversation .assistant-header strong{font-size:26px}
+  .guide-conversation .assistant-header>div>span{font-size:12px;max-width:180px}
+  .guide-conversation .assistant-header .text-button{max-width:90px;margin-left:auto;font-size:12px}
+  .guide-conversation .chat-transcript{height:370px;min-height:370px;max-height:370px}
+  .guide-conversation .chat-message{max-width:96%;padding:14px 15px;font-size:16px}
+  .guide-conversation .chat-message.user{max-width:90%}
+  .guide-conversation .chat-form{padding-left:12px}
+  .guide-conversation .suggested-questions{gap:7px}
+  .guide-conversation .suggested-questions button{padding:8px 10px}
+  .page-main .city-image{height:295px}
+  .page-main .city-details{grid-template-columns:1fr;gap:0}
+  .page-main .map-caption{flex-direction:column;gap:7px}
+  .next-destination .display-title{font-size:35px}
+  html[lang=zh] .journey-copy h3,html[lang=ja] .journey-copy h3{font-size:25px}
+  html[lang=zh] .chapter-card-copy h2,html[lang=ja] .chapter-card-copy h2,html[lang=zh] .chapter-card-copy h3,html[lang=ja] .chapter-card-copy h3{font-size:27px}
+  html[lang=zh] .flavor-directory .flavor-card h3,html[lang=ja] .flavor-directory .flavor-card h3,html[lang=zh] .related-grid .flavor-card h3,html[lang=ja] .related-grid .flavor-card h3{font-size:27px;line-height:1.5}
+}
+@media(max-width:380px){
+  .breadcrumbs{font-size:12px;gap:7px}
+  .page-intro .display-title{font-size:44px}
+  .page-intro{padding-top:29px;padding-bottom:35px}
+  .journey-image{height:220px}
+  .journey-copy{padding:24px 22px}
+  .chapter-card-photo{height:225px}
+  .chapter-card-copy{padding:24px 22px}
+  .chapter-detail-photo{height:260px}
+  .flavor-directory .flavor-image{height:290px}
+  .flavor-portrait{height:315px}
+  .related-grid .flavor-image{height:245px}
+  .guide-conversation.assistant-card{padding:20px 15px}
+  .guide-conversation .assistant-header{gap:8px}
+  .guide-conversation .assistant-avatar{width:36px;height:36px;font-size:18px}
+  .guide-conversation .assistant-header .text-button{max-width:78px}
+  .guide-conversation .chat-transcript{height:350px;min-height:350px;max-height:350px}
+  html[lang=zh] .page-intro .display-title,html[lang=ja] .page-intro .display-title{font-size:31px}
+}
+@media(prefers-reduced-motion:reduce){
+  .journey-card:hover,.chapter-card:hover,.journey-card:hover .journey-image img,.journey-card:hover .journey-enter:after{transform:none}
+}

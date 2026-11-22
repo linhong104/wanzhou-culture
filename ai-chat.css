@@ -1,0 +1,29 @@
+.guide-identity img{width:90px;height:65px;object-fit:contain;filter:drop-shadow(0 5px 8px #a83b2d12)}
+.journey-guide-image .journey-mascot{width:85%;height:85%;object-fit:contain;filter:drop-shadow(0 12px 18px #0002)}
+.guide-conversation .assistant-avatar{overflow:hidden;background:#ede4d7;border-color:#c6ae89;width:49px;height:49px}
+.assistant-avatar img{width:57px;max-width:none;height:49px;object-fit:contain;flex:none}
+.ai-mode-label{font-size:12px;line-height:1.6;color:#6f634f;border:1px solid #d2c2ac;padding:4px 9px;white-space:nowrap}
+.ai-mode-label[data-mode=ai]{color:#2b6254;border-color:#9ebcaf;background:#eef3ee}
+.ai-mode-controls{display:flex;align-items:center;gap:8px;padding-top:20px;flex-wrap:wrap}
+.ai-mode-controls button{font-size:14px;line-height:1.5;background:transparent;border:1px solid #d4c7b5;padding:8px 14px;min-height:40px;color:#796a55}
+.ai-mode-controls button[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:var(--cream)}
+.ai-mode-controls button:disabled{opacity:.5;cursor:default}
+.ai-mode-help{font-size:12px;line-height:1.7;color:var(--muted);margin:10px 0 0}
+.ai-availability-banner{border-left:2px solid var(--gold);font-size:14px;line-height:1.8;color:#77624a;background:#f1e9dc;padding:12px 15px;margin:16px 0 0}
+.ai-availability-banner[hidden],#chat-cancel[hidden]{display:none}
+.chat-message-source{display:block;font-size:11px;line-height:1.4;letter-spacing:.03em;color:#8f7354;margin-bottom:7px}
+.chat-message.ai{border-left:2px solid #a5b8a4}
+.chat-message.chat-error{background:#f6e9e3;color:#8e4639;border-left:2px solid #ae7762}
+.chat-message.chat-error .chat-message-source{color:#a2604b}
+.chat-typing{font-size:14px;color:var(--muted);padding:10px 18px;animation:wanzi-thinking-text 1.5s ease-in-out infinite}
+.chat-actions{display:flex;justify-content:flex-end;padding-top:10px;min-height:12px}
+.chat-cancel{border:0;background:transparent;font-size:14px;color:var(--red);padding:3px 0;border-bottom:1px solid #bda88b}
+.guide-conversation .assistant-header{flex-wrap:wrap;gap:12px}
+.guide-conversation .assistant-header .text-button{margin-left:auto}
+.guide-conversation button:disabled{cursor:default}
+.guide-conversation .chat-form button:disabled{opacity:.5}
+.guide-conversation .chat-transcript{height:360px;min-height:360px;max-height:480px}
+@keyframes wanzi-thinking-text{0%,100%{opacity:.5}50%{opacity:1}}
+@media(max-width:760px){.guide-conversation .chat-transcript{height:350px;min-height:350px}.ai-mode-label{font-size:11px;padding:4px 8px}.guide-identity img{width:80px;height:58px}.guide-conversation .assistant-header>div{min-width:130px}.ai-mode-help{font-size:12px}.ai-availability-banner{font-size:14px}}
+@media(max-width:420px){.guide-conversation .assistant-header .text-button{font-size:12px}.guide-conversation .assistant-header{gap:8px}.guide-conversation .assistant-header>div{min-width:100px;flex:1}.ai-mode-label{order:4}.ai-mode-controls button{font-size:13px}.guide-conversation .chat-transcript{height:330px;min-height:330px}}
+@media(prefers-reduced-motion:reduce){.chat-typing{animation:none}}
