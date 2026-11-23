@@ -2,17 +2,6 @@
 
 完整的中、英、日三语文化展示网站，包含 7 个页面、首页循环视频和鱼形向导「万滋」。
 
-## 发布
-
-1. 使用 GitHub 账号 `linhong104` [新建一个仓库](https://github.com/new)，设为 Public（公开），建议命名为 `wanzhou-culture`。
-2. 上传这个目录**里面的文件和 assets 文件夹**到仓库根目录；确保首页 `index.html` 直接位于根目录。不要上传 ZIP 本身，不要再套一层 github-pages 文件夹。
-3. 打开仓库 **Settings → Pages → Build and deployment**。
-4. Source 选择 **Deploy from a branch**，Branch 选择 **main**，目录选择 **/(root)**，点击 **Save**。
-5. 在 Pages 设置页等待 GitHub 显示实际发布网址。预期网址是 `https://linhong104.github.io/wanzhou-culture/?lang=zh`，只有发布成功后才能访问。页面名称请保留 `.html` 后缀，例如 `explore.html?lang=zh`。
-6. 用手机和电脑打开发布网址，再请之前打不开的朋友实测。
-
-免费方案使用公开仓库；发布后本包中的网页和素材会公开。此包没有平台身份文件、Git 历史、密钥或服务端文件。
-
 ## 功能
 
 - 首页视频保留最新原视频，静音、循环播放；浏览器可能因系统设置限制自动播放，页面保留播放控制。
